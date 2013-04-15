@@ -21,6 +21,7 @@ class Delivery extends CI_Controller {
         
         function sendRequest()
         {
+            log_message("info", "here");
             //get post data
             $pickupTime = $this->input->post('pickupTime');
             $deliveryAddr = $this->input->post('deliveryAddr');
