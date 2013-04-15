@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://students.cs.byu.edu/~kdevenis/CS462-4/CodeIgniter_2.1.3/';
+$config['base_url']	= 'http://students.cs.byu.edu/~kdevenis/proj4/flowershop/proj4-flowershop/CodeIgniter_2.1.3/';
 
 /*
 |--------------------------------------------------------------------------
