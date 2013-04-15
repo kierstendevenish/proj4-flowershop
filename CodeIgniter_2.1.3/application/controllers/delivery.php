@@ -23,7 +23,7 @@ class Delivery extends CI_Controller {
         {
             log_message("info", "here");
             //get post data
-            $pickupTime = $this->input->post('pickupTime');
+            /*$pickupTime = $this->input->post('pickupTime');
             $deliveryAddr = $this->input->post('deliveryAddr');
             $deliveryTime = $this->input->post('deliveryTime');
 
@@ -48,7 +48,7 @@ class Delivery extends CI_Controller {
                 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
                 curl_exec($ch);
                 curl_close($ch);
-
+*/
         }
         
         function viewall()
