@@ -25,17 +25,17 @@ class Delivery extends CI_Controller {
             $pickupTime = $this->input->post('pickupTime');
             $deliveryAddr = $this->input->post('deliveryAddr');
             $deliveryTime = $this->input->post('deliveryTime');
-log_message("info", "here2");
 
             //get persistent data
-            /*$this->load->model('request');
+            $this->load->model('request');
             $shopName = $this->request->getShopName();
             $coords = $this->request->getShopCoordinates();
             $shopCoords = $coords['lat'] . "," . $coords['long'];
             $shopEsl = $this->request->getShopEsl();
+            log_message("info", "here3");
 
             //save request to db
-            $id = $this->request->create($pickupTime, $deliveryAddr, $deliveryTime);
+            /*$id = $this->request->create($pickupTime, $deliveryAddr, $deliveryTime);
 
             $esl = $this->request->getGuildEsl();
 
