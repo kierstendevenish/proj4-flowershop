@@ -32,12 +32,12 @@ class Delivery extends CI_Controller {
             $coords = $this->request->getShopCoordinates();
             $shopCoords = $coords['lat'] . "," . $coords['long'];
             $shopEsl = $this->request->getShopEsl();
-            log_message("info", "here3");
 
             //save request to db
-            /*$id = $this->request->create($pickupTime, $deliveryAddr, $deliveryTime);
+            $id = $this->request->create($pickupTime, $deliveryAddr, $deliveryTime);
+log_message("info", "here4");
 
-            $esl = $this->request->getGuildEsl();
+            /*$esl = $this->request->getGuildEsl();
 
                 //make post request
                 $fields_str = '_name=delivery_ready&_domain=rfq&id='.$id.'&shopName='.$shopName.'&shopCoords='.$shopCoords.'&pickupTime='.$pickupTime.'&deliveryAddr='.$deliveryAddr.'&deliveryTime='.$deliveryTime.'&shopEsl='.$shopEsl;
