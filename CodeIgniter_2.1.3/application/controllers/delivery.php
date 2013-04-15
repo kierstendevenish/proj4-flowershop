@@ -35,12 +35,12 @@ class Delivery extends CI_Controller {
 
             //save request to db
             $id = $this->request->create($pickupTime, $deliveryAddr, $deliveryTime);
-log_message("info", "here4");
 
-            /*$esl = $this->request->getGuildEsl();
+            $esl = $this->request->getGuildEsl();
+log_message("info", "here5");
 
                 //make post request
-                $fields_str = '_name=delivery_ready&_domain=rfq&id='.$id.'&shopName='.$shopName.'&shopCoords='.$shopCoords.'&pickupTime='.$pickupTime.'&deliveryAddr='.$deliveryAddr.'&deliveryTime='.$deliveryTime.'&shopEsl='.$shopEsl;
+                /*$fields_str = '_name=delivery_ready&_domain=rfq&id='.$id.'&shopName='.$shopName.'&shopCoords='.$shopCoords.'&pickupTime='.$pickupTime.'&deliveryAddr='.$deliveryAddr.'&deliveryTime='.$deliveryTime.'&shopEsl='.$shopEsl;
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $esl);
                 curl_setopt($ch, CURLOPT_POST, 6);
