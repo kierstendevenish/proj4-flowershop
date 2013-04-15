@@ -66,5 +66,13 @@ Class Request extends CI_Model
             $result = $db->query("SELECT * FROM Bids WHERE deliveryId='" . $requestId . "';");
             return $result;
         }
+
+        function getGuildEsl()
+        {
+            $db = new PDO('sqlite:./application/db/flowershop');
+            $result = $db->query("SELECT dataValue FROM appDataString WHERE dataKey='guildEsl';");
+            $row = $result->fetch();
+            return $row['dataValue'];
+        }
 }
 ?>

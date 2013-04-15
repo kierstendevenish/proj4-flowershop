@@ -36,21 +36,18 @@ class Delivery extends CI_Controller {
             //save request to db
             $id = $this->request->create($pickupTime, $deliveryAddr, $deliveryTime);
 
-            //get list of esl's
-            $this->load->model('user');
-            $esls = $this->user->getAllEsls();
-            foreach ($esls as $e)
-            {
+            $esl = $this->request->getGuildEsl();
+
                 //make post request
                 $fields_str = '_name=delivery_ready&_domain=rfq&id='.$id.'&shopName='.$shopName.'&shopCoords='.$shopCoords.'&pickupTime='.$pickupTime.'&deliveryAddr='.$deliveryAddr.'&deliveryTime='.$deliveryTime.'&shopEsl='.$shopEsl;
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, $e);
+                curl_setopt($ch, CURLOPT_URL, $esl);
                 curl_setopt($ch, CURLOPT_POST, 6);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_str);
                 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
                 curl_exec($ch);
                 curl_close($ch);
-            }
+
         }
         
         function viewall()
