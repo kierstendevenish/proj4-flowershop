@@ -47,7 +47,8 @@ class Delivery extends CI_Controller {
                 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
                 curl_exec($ch);
                 curl_close($ch);
-log_message("info", "here6");
+
+                redirect('home');
         }
         
         function viewall()
