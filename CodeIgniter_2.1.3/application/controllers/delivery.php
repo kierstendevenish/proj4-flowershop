@@ -74,6 +74,7 @@ log_message('info', $esl);
 
         function pickedUp($deliveryId = '')
         {
+            $this->load->model('request');
             $esl = $this->request->getGuildEsl();
 
                 //make post request
