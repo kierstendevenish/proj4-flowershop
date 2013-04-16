@@ -33,7 +33,7 @@ class Bid extends CI_Controller {
             curl_setopt($ch, CURLOPT_URL, $esl);
             curl_setopt($ch, CURLOPT_POST, 4);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_str);
-            //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
             curl_exec($ch);
             curl_close($ch);
         }
