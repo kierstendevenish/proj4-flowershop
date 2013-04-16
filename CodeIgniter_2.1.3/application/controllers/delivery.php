@@ -71,6 +71,21 @@ log_message('info', $esl);
             $this->load->view('view_bids', $data);
             $this->load->view('templates/footer');
         }
+
+        function pickedUp($deliveryId = '')
+        {
+            $esl = $this->request->getGuildEsl();
+
+                //make post request
+                $fields_str = '_name=delivery_ready&_domain=rfq&id='.$id.'&shopName='.$shopName.'&shopCoords='.$shopCoords.'&pickupTime='.$pickupTime.'&deliveryAddr='.$deliveryAddr.'&deliveryTime='.$deliveryTime.'&shopEsl='.$shopEsl;
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $esl);
+                curl_setopt($ch, CURLOPT_POST, 9);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_str);
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+                curl_exec($ch);
+                curl_close($ch);
+        }
 }
 
 ?>
