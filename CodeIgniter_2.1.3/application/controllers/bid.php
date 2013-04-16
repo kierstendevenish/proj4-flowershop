@@ -9,7 +9,7 @@ class Bid extends CI_Controller {
 
 	function consume()
         {
-            log_message('here');
+            log_message('info','here');
             $this->load->model('request');
             $deliveryId = $this->input->post('deliveryId');
             $driverName = $this->input->post('driverName');
@@ -22,6 +22,11 @@ class Bid extends CI_Controller {
         function listAll()
         {
             $this->load->model('request');
+        }
+
+        function accept($deliveryId = '', $driverName = '')
+        {
+            log_message("info","accept bid");
         }
 
         
