@@ -37,7 +37,7 @@ class Delivery extends CI_Controller {
             $id = $this->request->create($pickupTime, $deliveryAddr, $deliveryTime);
 
             $esl = $this->request->getGuildEsl();
-            log_messgage('info', $esl);
+            log_message('info', $esl);
 
                 //make post request
                 $fields_str = '_name=delivery_ready&_domain=rfq&id='.$id.'&shopName='.$shopName.'&shopCoords='.$shopCoords.'&pickupTime='.$pickupTime.'&deliveryAddr='.$deliveryAddr.'&deliveryTime='.$deliveryTime.'&shopEsl='.$shopEsl;
