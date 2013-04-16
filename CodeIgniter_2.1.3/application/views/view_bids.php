@@ -14,7 +14,7 @@
        </tr>
    <?php if (count($bids) > 0):
         foreach ($bids as $bid):
-            echo "<tr><td>" . $bid['driverName'] . "</td><td>" . $bid['estimatedDeliveryTime'] . "</td><td>" . $bid['rate'] . "</td><td><a href='".base_url()."index.php/bid/accept/".$bid['deliveryId']."/".urlencode($bid['driverName'])."'>Accept</a></td></tr>";
+            echo "<tr><td>" . $bid['driverName'] . "</td><td>" . $bid['estimatedDeliveryTime'] . "</td><td>" . $bid['rate'] . "</td><td><a href='".base_url()."index.php/bid/accept/".$bid['deliveryId']."/".$bid['driverName']."'>Accept</a></td></tr>";
         endforeach;
    endif; ?>
    </table>
