@@ -28,7 +28,14 @@ class Bid extends CI_Controller {
         {
             $this->load->model('request');
             $esl = $this->request->getGuildEsl();
-            var_dump($esl);
+            $fields_str = '_name=bid_awarded&_domain=rfq&driverName='.$name.'&deliveryId='.$id;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $esl);
+            curl_setopt($ch, CURLOPT_POST, 4);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_str);
+            //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            curl_exec($ch);
+            curl_close($ch);
         }
 
         
