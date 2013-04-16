@@ -27,7 +27,7 @@ class Bid extends CI_Controller {
         function accept($deliveryId = '', $driverName = '')
         {
             $this->load->model('request');
-            $esl = $this->$request->getGuildEsl();
+            $esl = $this->request->getGuildEsl();
             var_dump($esl);
         }
 
