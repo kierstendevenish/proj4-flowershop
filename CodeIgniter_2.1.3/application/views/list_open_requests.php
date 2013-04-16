@@ -13,7 +13,6 @@
            <th>Driver</th>
            <th>Bids</th>
            <th>Picked Up</th>
-           <th>Delivered</th>
        </tr>
    <?php if (count($requests) > 0):
         foreach ($requests as $req):
