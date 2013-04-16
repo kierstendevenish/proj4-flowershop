@@ -9,6 +9,7 @@ class Bid extends CI_Controller {
 
 	function consume()
         {
+            log_message('here');
             $this->load->model('request');
             $deliveryId = $this->input->post('deliveryId');
             $driverName = $this->input->post('driverName');
