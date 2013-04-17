@@ -27,6 +27,7 @@ class Bid extends CI_Controller {
         function accept($deliveryId = '', $driverName = '')
         {
             $this->load->model('request');
+            $this->request->markAccepted($deliveryId);
             $esl = $this->request->getGuildEsl();
             $fields_str = '_name=bid_awarded&_domain=rfq&driverName='.$driverName.'&deliveryId='.$deliveryId;
             $ch = curl_init();
