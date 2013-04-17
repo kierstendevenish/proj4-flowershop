@@ -80,5 +80,11 @@ Class Request extends CI_Model
             $db = new PDO('sqlite:./application/db/flowershop');
             $db->query("UPDATE Requests SET driverId=1 WHERE id='".$deliveryId."';");
         }
+
+        function setDelivered($deliveryId = '')
+        {
+            $db = new PDO('sqlite:./application/db/flowershop');
+            $db->query("UPDATE Requests SET delivered=1 WHERE id='".$deliveryId."';");
+        }
 }
 ?>
